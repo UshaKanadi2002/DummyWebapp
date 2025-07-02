@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Defines character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive -->
+    <title>Interactive Web Page</title> <!-- Page title shown in tab -->
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+    .hidden { display: none; }
+    .error { color: red; font-size: 0.9rem; }
+
+    /* Dark background for carousel control buttons */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+    border-radius: 50%;
+    }
+    /* Smaller carousel images */
+    .carousel-inner img {
+        max-height: 400px;
+        object-fit: contain;
+    }
+    </style>
+</head>
+<body class="p-4"> <!-- p-4 is Bootstrap class for padding: 1.5rem -->
+<!-- Using padding on body ensures consistent spacing around all elements inside -->
+
+    <div class="container"> <!-- Bootstrap container centers and provides responsive width -->
+    <h1 class="mb-4">Interactive Contact Form</h1> <!-- Heading with bottom margin -->
+
+    <!-- Button to toggle form visibility -->
+    <button class="btn btn-primary mb-3" id="toggleForm">Toggle Form</button>
+
+    <!-- New additional button -->
+    <button class="btn btn-dark mb-3 ms-2" id="extraButton">Extra Action</button> <!-- Second button added next to toggle -->
+
+    <!-- Another new button -->
+    <button class="btn btn-outline-success mb-3 ms-2" id="anotherButton">Another Action</button> <!-- Third button -->
+
+    <!-- Contact Form with Bootstrap validation -->
+    <form id="contactForm" class="needs-validation border p-4 rounded" novalidate>
+    <!-- needs-validation activates Bootstrap validation styles -->
+    <!-- border adds a border, p-4 is padding, rounded gives rounded corners -->
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" required> <!-- Required name input -->
+        <div class="invalid-feedback">Please enter your name.</div> <!-- Bootstrap invalid message -->
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required> <!-- Required email input -->
+        <div class="invalid-feedback">Please enter a valid email.</div>
+    </div>
+    <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="4" required></textarea> <!-- Required message -->
+        <div class="invalid-feedback">Please enter your message.</div>
+    </div>
+    <button type="submit" class="btn btn-success">Send Message</button> <!-- Submit button -->
+    </form>
+
+    <!-- Button to trigger modal -->
+    <button class="btn btn-info mt-4" data-bs-toggle="modal" data-bs-target="#infoModal">Open Info Modal</button>
+
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Information</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button> <!-- Close button -->
+        </div>
+        <div class="modal-body">
+            This is a sample modal using Bootstrap. <!-- Modal content -->
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Tooltip Example -->
+    <button class="btn btn-secondary mt-3" data-bs-toggle="tooltip" title="Tooltip on button">Hover for Tooltip</button>
+
+    <!-- Collapse Example -->
+    <p>
+    <a class="btn btn-warning mt-3" data-bs-toggle="collapse" href="#collapseExample">Toggle Details</a>
+    </p>
+    <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        Here are more details shown with collapse.
+    </div>
+    </div>
+
+    <!-- Bootstrap Carousel with images -->
+    <div id="carouselExample" class="carousel slide mt-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="creatix.png" class="d-block w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+            <img src="brand.png" class="d-block w-100" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+            <img src="social.png" class="d-block w-100" alt="Slide 3">
+        </div>
+    </div>
+    <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+    </div>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- jQuery Scripts for interactivity -->
+<script>
+    $(function () {
+      // Initialize Bootstrap tooltips
+        $('[data-bs-toggle="tooltip"]').tooltip();
+
+      // Toggle the visibility of the contact form
+        $('#toggleForm').click(function () {
+        $('#contactForm').slideToggle(); // jQuery slide animation
+        });
+
+      // Action for extra button
+        $('#extraButton').click(function () {
+        alert("You clicked the extra action button!"); // Example alert for extra button
+        });
+
+      // Action for the newly added button
+        $('#anotherButton').click(function () {
+        alert("This is another custom action!"); // Example action for another button
+        });
+
+      // Form submission with validation and simulated AJAX
+        $('#contactForm').on('submit', function (e) {
+        e.preventDefault(); // Prevent default form submit
+        let form = this;
+
+        if (form.checkValidity() === false) {
+          e.stopPropagation(); // Prevent submission if form is invalid
+        } else {
+          // Simulate AJAX submission
+            const formData = {
+            name: $('#name').val(), // Get name value
+            email: $('#email').val(), // Get email value
+            message: $('#message').val() // Get message value
+            };
+          console.log("Sending via AJAX:", formData); // Log data
+            alert("Form submitted successfully via simulated AJAX!");
+          form.reset(); // Reset form after submission
+        }
+
+        $(form).addClass('was-validated'); // Bootstrap validation styling
+    });
+    });
+    </script>
+</body>
+</html>
