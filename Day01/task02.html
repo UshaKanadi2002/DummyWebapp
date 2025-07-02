@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Defines character encoding -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes the page responsive -->
-    <title>Interactive Web Page</title> <!-- Page title shown in tab -->
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Interactive Web Page</title> 
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,57 +15,55 @@
     .hidden { display: none; }
     .error { color: red; font-size: 0.9rem; }
 
-    /* Dark background for carousel control buttons */
+    
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.6); 
     border-radius: 50%;
     }
-    /* Smaller carousel images */
+    
     .carousel-inner img {
         max-height: 400px;
         object-fit: contain;
     }
     </style>
 </head>
-<body class="p-4"> <!-- p-4 is Bootstrap class for padding: 1.5rem -->
-<!-- Using padding on body ensures consistent spacing around all elements inside -->
+<body class="p-4"> 
 
-    <div class="container"> <!-- Bootstrap container centers and provides responsive width -->
-    <h1 class="mb-4">Interactive Contact Form</h1> <!-- Heading with bottom margin -->
+    <div class="container">
+    <h1 class="mb-4">Interactive Contact Form</h1> 
 
-    <!-- Button to toggle form visibility -->
+
     <button class="btn btn-primary mb-3" id="toggleForm">Toggle Form</button>
 
-    <!-- New additional button -->
+    
     <button class="btn btn-dark mb-3 ms-2" id="extraButton">Extra Action</button> <!-- Second button added next to toggle -->
 
-    <!-- Another new button -->
+    
     <button class="btn btn-outline-success mb-3 ms-2" id="anotherButton">Another Action</button> <!-- Third button -->
 
-    <!-- Contact Form with Bootstrap validation -->
+
     <form id="contactForm" class="needs-validation border p-4 rounded" novalidate>
-    <!-- needs-validation activates Bootstrap validation styles -->
-    <!-- border adds a border, p-4 is padding, rounded gives rounded corners -->
+    
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" required> <!-- Required name input -->
-        <div class="invalid-feedback">Please enter your name.</div> <!-- Bootstrap invalid message -->
+        <input type="text" class="form-control" id="name" required> 
+        <div class="invalid-feedback">Please enter your name.</div> 
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" required> <!-- Required email input -->
+        <input type="email" class="form-control" id="email" required> 
         <div class="invalid-feedback">Please enter a valid email.</div>
     </div>
     <div class="mb-3">
         <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" id="message" rows="4" required></textarea> <!-- Required message -->
+        <textarea class="form-control" id="message" rows="4" required></textarea> 
         <div class="invalid-feedback">Please enter your message.</div>
     </div>
-    <button type="submit" class="btn btn-success">Send Message</button> <!-- Submit button -->
+    <button type="submit" class="btn btn-success">Send Message</button> 
     </form>
 
-    <!-- Button to trigger modal -->
+    
     <button class="btn btn-info mt-4" data-bs-toggle="modal" data-bs-target="#infoModal">Open Info Modal</button>
 
     <!-- Bootstrap Modal -->
