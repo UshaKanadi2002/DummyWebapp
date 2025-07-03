@@ -1,0 +1,99 @@
+/* navbar */
+.navbar {
+    background-color: cadetblue;
+}
+
+.navbar-brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #1d2c3b;
+    letter-spacing: 2px;
+    }
+
+.nav-link {
+    color: #1d2c3b;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 7px;
+    transition: background-colour 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    background-color:ivory;
+    color: #1d2c3b;
+}
+
+.nav-link.active {
+    background-color: #007d89;
+    color: white;
+}
+.circle-skill{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color:aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.4 ease;
+    cursor: pointer;
+}
+
+.circle-skill:hover {
+    background-color: cadetblue;
+}
+
+.skill-logo {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+/* rectangle project card styling */
+
+/* Rectangle Project Card Styling */
+.project-card {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s;
+  min-height: 350px; /* Increased height */
+}
+.project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+}
+
+/*Contact section */
+#contact h2 {
+    color: #1d2c3b;
+    font-weight: 600;
+}
+
+#contact p, #contact a{
+    color: #2e3a47;
+    font-size: 16px;
+}
+
+#contact a{
+    text-decoration: none;
+}
+
+#contact .form-control {
+    background-color: #d2ecf5;
+    border: none;
+}
+
+#contact .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+#contact .btn-primary {
+    background-color: #00a9b7;
+    border: none;
+}
+
+#contact .btn-primary:hover {
+    background-color: #007d89;
+}
